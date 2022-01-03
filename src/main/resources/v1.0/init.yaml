@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: init
+      author: azalyalov
+      changes:
+        - sql:
+            sql: "create table roles(
+                  id bigint generated always as identity,
+                  role varchar(255),
+                  primary key (id));
+              
+                  comment on table roles is 'Роли';
+                  comment on column roles.id is 'Идентификатор роли';
+                  comment on column roles.role is 'Имя роли';
+                  
+                  create table users(
+                  id bigint generated always as identity,
+                  name varchar(255),
+                  primary key (id));
+
+                  comment on table users is 'Пользователи';
+                  comment on column users.id is 'Идентификатор пользователя';
+                  comment on column users.name is 'Имя пользователя';
+                  
+                  create table users_roles (
+                  user_id bigint references users,
+                  role_id bigint references roles);"
+

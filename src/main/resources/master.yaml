@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: v1.0/init.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1.0/30122021_insert_roles.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1.0/30122021_create_v_user_view.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: v1.0/30122021_insert_users.yaml
+      relativeToChangelogFile: true

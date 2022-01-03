@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30122021_insert_roles
+      author: azalyalov
+      changes:
+        - sql:
+            sql: "CREATE VIEW v_user_view AS
+                  SELECT id, name, array_to_string(
+                  (SELECT array_agg(role) AS user_roles FROM roles JOIN users_roles ur ON roles.id = ur.role_id), ', ') roles
+                  FROM users u;"

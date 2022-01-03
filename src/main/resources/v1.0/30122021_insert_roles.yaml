@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30122021_insert_roles
+      author: azalyalov
+      changes:
+        - sql:
+            sql: "insert into roles(role) values('ADMIN');
+                  insert into roles(role) values('MANAGER');
+                  insert into roles(role) values('PRORAB');"

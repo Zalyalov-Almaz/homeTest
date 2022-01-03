@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 30122021_insert_roles
+      author: azalyalov
+      changes:
+        - sql:
+            sql: "insert into users (name) values('Almaz');
+                  insert into users_roles (user_id, role_id) values (1, 1);
+                  insert into users_roles (user_id, role_id) values (1, 3);"
