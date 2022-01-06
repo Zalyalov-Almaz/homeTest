@@ -24,7 +24,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = {CascadeType.REFRESH, CascadeType.MERGE})
     private List<Role> roles;
 
     public User(String name, List<Role> roles) {
